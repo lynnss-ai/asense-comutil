@@ -1,0 +1,44 @@
+syntax = "v1"
+
+info(
+    title: "common.api"
+    desc: "go-zero common api"
+    author: "lynnss97"
+    email: "lynntobing@gmail.com"
+    version: "1.0"
+)
+
+type(
+    CommonIDPathReq struct {
+        ID string `path:"id"`
+    }
+    CommonIDFormReq struct {
+        ID *string `form:"id,optional"`
+    }
+
+    CommonCodePathReq{
+        Code string `path:"code"`
+    }
+
+    CommonFilterPathReq{
+        Filter string `path:"filter"`
+    }
+    CommonFilterFormReq{
+        Filter *string `form:"filter,optional"`
+    }
+
+    CommonPageFormReq{
+        Page int `form:"page"`
+        PageSize int `form:"pageSize"`
+        Filter *string `form:"filter,optional"`
+    }
+
+    CommonKvResp{
+        Key string `json:"key"`
+        Value string `json:"value"`
+    }
+    CommonKvListResp{
+        Items []CommonKvResp `json:"items"`
+    }
+
+)
